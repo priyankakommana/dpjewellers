@@ -1,0 +1,28 @@
+# Backend
+target/
+.mvn/
+mvnw
+mvnw.cmd
+*.class
+*.jar
+*.war
+.idea/
+*.iml
+/src/main/resources/application.properties
+/src/main/resources/application-prod.properties
+.env
+
+# Frontend - Next.js
+node_modules/
+.next/
+out/
+dist/
+.env.local
+.env.development.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
