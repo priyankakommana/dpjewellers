@@ -32,7 +32,7 @@ export default function GoldPage() {
         </div>
         <h1 className="text-center text-3xl text-[#f7d774]">GOLD - {list.length} Products</h1>
         
-        {/* 2. IKKADA MUNDU UNNA GRID NI TEESI IDI PETTU */}
+        
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
           {list.map((p:any) => (
             <ProductCard key={p.id} product={p} />

@@ -1,10 +1,12 @@
 "use client"
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
 export default function ProfilePage() {
   const [form, setForm] = useState({ fullName: "", phone: "", addressLine1: "", city: "", state: "Telangana", pincode: "" })
   const [list, setList] = useState<any[]>([])
   const token = typeof window!== "undefined"? localStorage.getItem("token") : null;
+  const router = useRouter();
+
 
   const load = () => {
     if (!token) return
@@ -31,8 +33,9 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="flex min-h-screen bg-black text-white p-6">
       <div className="max-w-2xl mx-auto">
+        <button onClick={() => router.back()} className="flex w-full justify-start py-4 md:py-8 text-white text-left">← Back</button>
         <h1 className="text-3xl font-bold mb-6">My Profile</h1>
         <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
           <h2 className="text-lg font-semibold mb-4">Add New Address</h2>

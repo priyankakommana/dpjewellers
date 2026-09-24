@@ -1,6 +1,7 @@
 com\dpjewellers\dto\WishlistDTO.class
 com\dpjewellers\controller\OrderController.class
 com\dpjewellers\model\entity\Wishlist$WishlistBuilder.class
+com\dpjewellers\controller\PaymentController.class
 com\dpjewellers\controller\AddressController.class
 com\dpjewellers\repository\TrackingRepository.class
 com\dpjewellers\repository\UserInfoRepository.class
@@ -9,6 +10,7 @@ com\dpjewellers\dto\request\LoginRequest.class
 com\dpjewellers\exception\ResourceNotFoundException.class
 com\dpjewellers\service\AuthService.class
 com\dpjewellers\dto\ProductDTO.class
+com\dpjewellers\service\PaymentService.class
 com\dpjewellers\dto\AddressDTO$AddressDTOBuilder.class
 com\dpjewellers\model\enums\OrderStatus.class
 com\dpjewellers\model\entity\Address$AddressBuilder.class

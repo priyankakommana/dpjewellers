@@ -1,41 +1,66 @@
+// "use client";
 "use client";
+import { useRouter } from "next/navigation";
 
 export default function ContactPage() {
-  const phoneNumber = "62819666"; // Nee number
-  const whatsappMsg = "Hi DP Jewellers! I need help with...";
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMsg)}`;
+  const router = useRouter();
 
   return (
-    <div className="min-h-[85vh] bg-[#0a0a0a] flex flex-col items-center justify-center px-4 py-20">
-      <div className="text-center mb-8">
-        <h1 className="text-white font-serif text-4xl md:text-5xl font-bold tracking-wide">Contact DP Jewellers</h1>
-        <p className="text-white/60 mt-3 text-lg">Chanda Nagar, Hyderabad, Telangana - 500050</p>
-      </div>
+    <div className="min-h-screen bg-black text-white px-4 py-6 relative">
+      
+      <div className="w-full max-w-[640px] mx-auto">
 
-      <div className="w-full max-w-2xl bg-[#1c222e]/80 backdrop-blur border border-zinc-800 rounded-2xl p-6 md:p-8">
-        <div className="space-y-4">
-          <p className="flex items-center gap-3 text-white">
-            <span className="text-pink-400">📞</span> Phone: +91 98765 43210
-          </p>
-          <p className="flex items-center gap-3 text-white">
-            <span className="text-blue-400">📧</span> Email: support@dpjewellers.com
-          </p>
-          <p className="flex items-center gap-3 text-white">
-            <span className="text-pink-400">📍</span> Store: MIG 123, Chanda Nagar Main Road
-          </p>
+        
+        <div className="flex justify-start mb-12 mt-2">
+          <button
+            onClick={() => router.back()}
+            className="px-5 py-2 rounded-full text-sm text-[#c9a84c] border border-[#c9a84c]/30 text-[15px] bg-black hover:bg-[#c9a84c] hover:text-black transition-all duration-200"
+          >
+            ← Back
+          </button>
+        </div>
+
+        
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-left leading-tight">
+          Contact DP Jewellers
+        </h1>
+        <p className="text-gray-400 text-left mt-4 text-[15px]">
+          Chanda Nagar, Hyderabad, Telangana - 500050
+        </p>
+
+        {/* Info Card */}
+        <div className="mt-10 bg-[#11131A] rounded-2xl p-6 md:p-7 border border-white/5">
+          <div className="space-y-5 text-[15px]">
+            <p className="flex gap-3">
+              <span>📞</span> Phone: +91 98765 43210
+            </p>
+            <p className="flex gap-3">
+              <span>📧</span> Email: support@dpjewellers.com
+            </p>
+            <p className="flex gap-3">
+              <span>📍</span> Store: MIG 123, Chanda Nagar Main Road
+            </p>
+          </div>
+        </div>
+
+        {/* WhatsApp Button */}
+        <div className="flex justify-center mt-10">
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            className="bg-[#1DB954] hover:bg-[#1aa64b] text-white font-semibold px-8 py-3.5 rounded-full transition"
+          >
+            Chat on WhatsApp
+          </a>
         </div>
       </div>
 
-      <a
-        href={whatsappLink}
-        target="_blank"
-        className="mt-8 px-8 py-3 bg-[#25D366] text-white rounded-full font-bold text-lg hover:bg-[#1fb954] transition-all hover:scale-105 shadow-lg shadow-green-900/20"
-      >
-        Chat on WhatsApp
-      </a>
-
-      {/* Floating WhatsApp - antha site lo kanipistundi */}
-      <a href={whatsappLink} target="_blank" className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-2xl shadow-xl z-50 hover:scale-110 transition">💬</a>
+      <div className="fixed bottom-5 left-5 w-9 h-9 rounded-full bg-black border border-white/20 flex items-center justify-center text-white">
+        N
+      </div>
+      <div className="fixed bottom-5 right-5 w-12 h-12 rounded-full bg-[#1DB954] flex items-center justify-center">
+        💬
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\co
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\AuthController.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\CartController.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\OrderController.java
-C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\OtpController.java
+C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\PaymentController.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\ProductController.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\TrackingController.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\controller\UserController.java
@@ -57,6 +57,7 @@ C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\co
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\CustomUserDetailsService.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\OrderService.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\OtpService.java
+C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\PaymentService.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\ProductService.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\service\WishlistService.java
 C:\Users\priya\OneDrive\Desktop\DP_Project\dp-jewellers-backend\src\main\java\com\dpjewellers\util\JwtUtil.java

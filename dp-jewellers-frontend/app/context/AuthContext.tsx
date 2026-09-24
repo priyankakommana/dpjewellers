@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setToken(t);
     }
 
-    // FIX - safe parse
+    
     if (savedUser && savedUser !== "undefined" && savedUser !== "null") {
       try {
         setUser(JSON.parse(savedUser));

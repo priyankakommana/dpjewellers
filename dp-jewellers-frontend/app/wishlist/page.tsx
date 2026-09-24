@@ -1,3 +1,4 @@
+
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -36,9 +37,7 @@ export default function WishlistPage() {
     }
   };
 
-  useEffect(() => {
-    fetchList();
-  }, []);
+  useEffect(() => { fetchList(); }, []);
 
   const addToCart = async (item: WishlistItem) => {
     const token = localStorage.getItem("token");
@@ -54,29 +53,30 @@ export default function WishlistPage() {
     alert("Added to cart!");
   };
 
-  const remove = async (id: number) => {
-    const token = localStorage.getItem("token");
-    await fetch(`/api/backend/wishlist/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    fetchList();
+  const remove = async (id: number, productId?: number) => {
+    let saved = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    saved = saved.filter((x: any) => x !== id && x !== productId);
+    localStorage.setItem("wishlist", JSON.stringify(saved));
+    setList((prev) => prev.filter((item) => item.id !== id));
     window.dispatchEvent(new Event("wishlistUpdated"));
+
+    try {
+      const token = localStorage.getItem("token");
+      await fetch(`/api/backend/wishlist/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token?.trim()}` },
+      });
+    } catch (e) { console.log(e); }
   };
 
-  if (loading) {
-    return <div className="min-h-screen bg-[#050505] text-white p-8">Loading...</div>;
-  }
+  if (loading) return <div className="min-h-screen bg-[#050505] text-white p-8">Loading...</div>;
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
       <div className="max-w-6xl mx-auto p-4 md:p-8">
-        <button onClick={() => router.back()} className="mb-4">← Back</button>
+        <button onClick={() => router.back()} className="mb-6 text-sm text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-1.5 rounded-full hover:bg-[#c9a84c] hover:text-black transition">← Back</button>
         <h1 className="text-2xl font-serif mb-6">My Wishlist</h1>
-
-        {list.length === 0 ? (
-          <p>No items in wishlist</p>
-        ) : (
+        {list.length === 0 ? <p>No items in wishlist</p> : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {list.map((item: any) => (
               <div key={item.id} className="flex gap-4 border p-4 rounded">
@@ -86,7 +86,7 @@ export default function WishlistPage() {
                   <p>₹{item.price}</p>
                   <div className="flex gap-2 mt-2">
                     <button onClick={() => addToCart(item)} className="bg-white text-black px-3 py-1 rounded">Add to Cart</button>
-                    <button onClick={() => remove(item.id)} className="border px-3 py-1 rounded">Remove</button>
+                    <button onClick={() => remove(item.id, item.productId)} className="border px-3 py-1 rounded">Remove</button>
                   </div>
                 </div>
               </div>

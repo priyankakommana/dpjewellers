@@ -1,8 +1,13 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function MyOrders() {
   const [orders, setOrders] = useState<any[]>([])
+  const router = useRouter();
+
+  
+
   useEffect(() => {
     const token = localStorage.getItem("token")
     fetch("http://localhost:8080/api/orders/my", { headers: { Authorization: `Bearer ${token}` } })
@@ -11,7 +16,9 @@ export default function MyOrders() {
 
   return (
     <div className="min-h-screen bg-black text-white p-6">
+      
       <div className="max-w-3xl mx-auto">
+        
         <h1 className="text-3xl font-bold mb-6">My Orders</h1>
         {orders.length === 0 && <p className="text-gray-400">No orders yet bro</p>}
         {orders.map((o: any) => (
@@ -26,7 +33,9 @@ export default function MyOrders() {
             </div>
           </div>
         ))}
+        <button onClick={() => router.push("/gold")} className="w-full mt-6 bg-gradient-to-r from-[#c9a84c] to-[#f7d774] text-black font-bold py-3 rounded-full hover:scale-[1.02] transition">Continue Shopping</button>
       </div>
+      
     </div>
   )
 }

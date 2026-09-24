@@ -1,3 +1,4 @@
+
 "use client";
 import { useRouter } from "next/navigation";
 import Navbar from "./components/navbar/Navbar";
@@ -37,33 +38,11 @@ export default function Landing() {
           </div>
         </div>
         {/* RIGHT IMAGE */}
-        <div className="w-full lg:w-[48%] h-[500px] lg:h-auto relative">
+        <div className="w-full lg:w-[60%] h-[500px] lg:h-auto relative lg:-ml-[5%]">
           <img src="/assets/bg.jpeg" alt="bridal" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
         </div>
       </div>
-
-      {/* ===== SHOP BY METAL - IKKADE ADD CHESA BRO =====
-      <div className="w-full bg-[#0a0a0a] px-6 lg:px-16 py-12 border-t border-[#c9a84c]/20">
-        <h2 className="text-center text-[#e6c87a] tracking-[0.3em] text-sm mb-8">SHOP BY METAL</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div onClick={()=>router.push('/gold')} className="cursor-pointer bg-[#111] border border-[#c9a84c]/30 rounded-3xl p-10 text-center hover:border-[#f7d774] hover:scale-105 transition-all">
-            <div className="text-6xl mb-4">💍</div>
-            <h3 className="text-[#f7d774] text-2xl font-bold">Gold</h3>
-            <p className="text-white/40 text-xs mt-2">22K 916 Hallmarked</p>
-          </div>
-          <div onClick={()=>router.push('/silver')} className="cursor-pointer bg-[#111] border border-white/10 rounded-3xl p-10 text-center hover:border-white/40 hover:scale-105 transition-all">
-            <div className="text-6xl mb-4">✨</div>
-            <h3 className="text-white text-2xl font-bold">Silver</h3>
-            <p className="text-white/40 text-xs mt-2">Pure 925 Silver</p>
-          </div>
-          <div onClick={()=>router.push('/diamond')} className="cursor-pointer bg-[#111] border border-blue-200/20 rounded-3xl p-10 text-center hover:border-blue-200/50 hover:scale-105 transition-all">
-            <div className="text-6xl mb-4">💎</div>
-            <h3 className="text-blue-200 text-2xl font-bold">Diamond</h3>
-            <p className="text-white/40 text-xs mt-2">IGI Certified</p>
-          </div>
-        </div> */}
-      {/* </div> */}
 
       <div className="w-full h-[44px] bg-black border-t-2 border-[#c9a84c] flex items-center justify-center gap-10 lg:gap-24 text-[#c9a84c] text-xs shrink-0">
         <span>🚚 Free Shipping</span>
